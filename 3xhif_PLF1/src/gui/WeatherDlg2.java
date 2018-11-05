@@ -74,6 +74,11 @@ private int sealvl,hum;
         jPanel2.add(btOk);
 
         btCancel.setText("Cancel");
+        btCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelActionPerformed(evt);
+            }
+        });
         jPanel2.add(btCancel);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.SOUTH);
@@ -116,6 +121,10 @@ private int sealvl,hum;
         temp = Float.parseFloat(tfHumidity.getText());
         this.dispose();
     }//GEN-LAST:event_btOkActionPerformed
+
+    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
+    this.dispose();
+    }//GEN-LAST:event_btCancelActionPerformed
 
     /**
      * @param args the command line arguments

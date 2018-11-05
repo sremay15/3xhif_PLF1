@@ -28,6 +28,16 @@ public class WeatherBl extends AbstractTableModel{
         }
         fireTableDataChanged();
     }
+    
+    public void setTemp(int index, float newTemp){
+        data.get(index).setTemp(newTemp);
+        fireTableDataChanged();
+    }
+    
+    public void setHum(int index, int hum){
+        data.get(index).setHum(hum);
+        fireTableDataChanged();
+    }
 
     @Override
     public int getRowCount() {

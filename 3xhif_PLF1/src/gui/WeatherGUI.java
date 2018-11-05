@@ -69,9 +69,19 @@ private WeatherBl model = new WeatherBl();
         jMenu2.setText("Values");
 
         miSetTemp.setText("Set Temperature");
+        miSetTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSetTempActionPerformed(evt);
+            }
+        });
         jMenu2.add(miSetTemp);
 
         miSetHum.setText("Set Humidity");
+        miSetHum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSetHumActionPerformed(evt);
+            }
+        });
         jMenu2.add(miSetHum);
 
         jMenuBar1.add(jMenu2);
@@ -102,6 +112,18 @@ private WeatherBl model = new WeatherBl();
     int [] array = tabWheater.getSelectedRows();
     model.removeRows(array);
     }//GEN-LAST:event_miRemoveActionPerformed
+
+    private void miSetTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSetTempActionPerformed
+        TemperatureDlg dlg = new TemperatureDlg(this, true);
+        dlg.setVisible(true);
+        model.setTemp(tabWheater.getSelectedRow(),dlg.getTemp());
+    }//GEN-LAST:event_miSetTempActionPerformed
+
+    private void miSetHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSetHumActionPerformed
+        HumidityDlg dlg = new HumidityDlg(this, true);
+        dlg.setVisible(true);
+        model.setHum(tabWheater.getSelectedRow(),dlg.getHum());
+    }//GEN-LAST:event_miSetHumActionPerformed
 
     /**
      * @param args the command line arguments
